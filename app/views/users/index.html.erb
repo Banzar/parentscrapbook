@@ -1,5 +1,5 @@
 <%= will_paginate(:renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'pagination-sm') %>
-    <% unless @users.nil? %>
+    <% if @users.count >= 1 %>
     <table>
       <thead>
         <tr>
@@ -20,5 +20,7 @@
         <% end %>
       </tbody>
     </table>
+    <% else %>
+    <h1>There are currently no users signed up, you can sign up and be the first user!</h1>
     <% end %>
 
