@@ -1,0 +1,13 @@
+<h1 align="center">Sign Up</h1>
+<div class="row">
+  	<div class="col-md-6 col-md-offset-3">
+  		<%= render 'shared/error_messages' %>
+		<%= simple_form_for(@user, html: { multipart: true }) do |user| %>
+			<%= user.input :name %>
+			<%= user.input :email %>
+			<%= user.input :password %>
+			<%= user.input :password_confirmation %>
+			<%= user.submit "Create Account", class: "btn btn-primary" %>
+		<% end %>
+	</div>
+</div>
