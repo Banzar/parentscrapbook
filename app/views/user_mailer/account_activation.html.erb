@@ -3,8 +3,11 @@
 <p>Hi <%= @user.name %>,</p>
 
 <p>
-Welcome to the Sample App! Click on the link below to activate your account:
+Welcome to the Parent Scrapbook! Click on the link below to activate your account:
 </p>
 
 <%= link_to "Activate", edit_account_activation_url(@user.activation_token,
                                                     email: @user.email) %>
+
+
+<p>Once you activate your account, you will be logged in automatically, and will be able to log in after this anytime. Once you are activated, you will be directed to your profile. On your profile, you will have to click Add Child link to add your child/children. After adding a child...</p>
