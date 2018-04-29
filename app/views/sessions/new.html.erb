@@ -1,13 +1,16 @@
 <div class="row">
 	<div class="col-md-6 col-md-offset-3">
 		<h1 align="center">Log In</h1>
-		<%= simple_form_for(:session, url: login_path) do |f| %>
+		<%= simple_form_for(:session, url: login_path, multipart: true, class: ".form-horizontal") do |f| %>
 			<%= f.input :email %>
 			<%= f.input :password, class: 'form-control' %>
-		    <%= f.label :remember_me, class: "checkbox inline" do %>
-		        <%= f.check_box :remember_me %>
-		    <span>Remember me</span>
-		    <% end %>
+		<div id="remember_me">
+			<%= f.label :remember_me, class: "checkbox inline" do %>
+			  <%= f.check_box :remember_me %>
+			  <span>Remember me on this computer</span>
+			<% end %>
+			<br /><br />		
+		</div>
 			<%= f.submit "Log In", class: 'btn btn-primary' %>
 		<% end %>
 		<p>New user? <%= link_to "Sign up now!", signup_path %></p>
